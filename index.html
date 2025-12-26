@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1122950-FinalTerm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-container">
+    <h1>🎯 九路圍棋</h1>
+    
+    <div class="status-box">
+        <div id="status">🖤 黑棋回合</div>
+        <div class="score-board">
+            <div>黑棋子數: <span id="blackScore">0</span></div>
+            <div>白棋子數: <span id="whiteScore">0</span></div>
+        </div>
+        <div id="passInfo" class="pass-info"></div>
+    </div>
+
+    <div id="board"></div>
+
+    <div class="controls">
+        <button onclick="game.undoMove()" id="undoBtn" disabled>悔棋</button>
+        <button onclick="newGame()">新局</button>
+        <button class="pass-btn" onclick="game.pass()" id="passBtn">讓子 (Pass)</button>
+        <button onclick="game.calculateFinalScore()" id="calcBtn">✅ 確認死子並計算</button> 
+        <button onclick="toggleAI()" id="aiBtn">AI: 開</button>
+    </div>
+</div>
+
+<div id="scoreModal" class="modal">
+    <div class="modal-content">
+        <h2>📊 終局結算</h2>
+        <div id="scoreDetails"></div>
+        <div id="winnerDisplay" class="winner"></div>
+        <button onclick="document.getElementById('scoreModal').classList.remove('active')" class="close-btn">關閉</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
